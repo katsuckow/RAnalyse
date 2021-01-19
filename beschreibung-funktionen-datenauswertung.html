@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Kapitel 3 Beschreibung Funktionen: Datenauswertung | Datenanalyse: Eye-tracking 2020/2021</title>
+  <meta name="description" content="Das ist ein kurzer Übersicht über die benötigten R-Befehle für das Eye-tracking Praktikum 2020/2021" />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Kapitel 3 Beschreibung Funktionen: Datenauswertung | Datenanalyse: Eye-tracking 2020/2021" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Das ist ein kurzer Übersicht über die benötigten R-Befehle für das Eye-tracking Praktikum 2020/2021" />
+  <meta name="github-repo" content="katsuckow/RAnalyse" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Kapitel 3 Beschreibung Funktionen: Datenauswertung | Datenanalyse: Eye-tracking 2020/2021" />
+  
+  <meta name="twitter:description" content="Das ist ein kurzer Übersicht über die benötigten R-Befehle für das Eye-tracking Praktikum 2020/2021" />
+  
+
+<meta name="author" content="Katja Suckow" />
+
+
+<meta name="date" content="2021-01-19" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="datenbeschreibungen-in-r.html"/>
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Kleine R Übersicht: Eye-tracking Praktikum</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Willkommen</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#was-braucht-man-dafür"><i class="fa fa-check"></i><b>1.1</b> Was braucht man dafür?</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#einleitung-datentypen-in-der-linguistik"><i class="fa fa-check"></i><b>1.2</b> Einleitung: Datentypen in der Linguistik</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#population-und-stichprobe"><i class="fa fa-check"></i><b>1.3</b> Population und Stichprobe</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#deskriptive-statistik-und-inferenzstatistik"><i class="fa fa-check"></i><b>1.4</b> Deskriptive Statistik und Inferenzstatistik</a></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#r-als-taschenrechner-beispiele"><i class="fa fa-check"></i><b>1.5</b> R als Taschenrechner: Beispiele</a></li>
+<li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#einige-vordefinierte-beispielfunktionen"><i class="fa fa-check"></i><b>1.6</b> Einige vordefinierte Beispielfunktionen</a></li>
+<li class="chapter" data-level="1.7" data-path="index.html"><a href="index.html#vergleichsoperatoren"><i class="fa fa-check"></i><b>1.7</b> Vergleichsoperatoren</a></li>
+<li class="chapter" data-level="1.8" data-path="index.html"><a href="index.html#logische-vergleichsoperatoren"><i class="fa fa-check"></i><b>1.8</b> Logische Vergleichsoperatoren</a></li>
+<li class="chapter" data-level="1.9" data-path="index.html"><a href="index.html#variablen-in-r"><i class="fa fa-check"></i><b>1.9</b> Variablen in R</a></li>
+<li class="chapter" data-level="1.10" data-path="index.html"><a href="index.html#hilfefunktionen"><i class="fa fa-check"></i><b>1.10</b> Hilfefunktionen</a></li>
+<li class="chapter" data-level="1.11" data-path="index.html"><a href="index.html#pakete-laden"><i class="fa fa-check"></i><b>1.11</b> Pakete Laden</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="datenbeschreibungen-in-r.html"><a href="datenbeschreibungen-in-r.html"><i class="fa fa-check"></i><b>2</b> Datenbeschreibungen in R</a><ul>
+<li class="chapter" data-level="2.1" data-path="datenbeschreibungen-in-r.html"><a href="datenbeschreibungen-in-r.html#r-vektoren"><i class="fa fa-check"></i><b>2.1</b> R-Vektoren</a></li>
+<li class="chapter" data-level="2.2" data-path="datenbeschreibungen-in-r.html"><a href="datenbeschreibungen-in-r.html#r-datentypen"><i class="fa fa-check"></i><b>2.2</b> R-Datentypen</a></li>
+<li class="chapter" data-level="2.3" data-path="datenbeschreibungen-in-r.html"><a href="datenbeschreibungen-in-r.html#r-data-frames"><i class="fa fa-check"></i><b>2.3</b> R-Data frames</a></li>
+<li class="chapter" data-level="2.4" data-path="datenbeschreibungen-in-r.html"><a href="datenbeschreibungen-in-r.html#r-matritzen"><i class="fa fa-check"></i><b>2.4</b> R-Matritzen</a></li>
+<li class="chapter" data-level="2.5" data-path="datenbeschreibungen-in-r.html"><a href="datenbeschreibungen-in-r.html#r---nützliche-funktionen"><i class="fa fa-check"></i><b>2.5</b> R - nützliche Funktionen</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="beschreibung-funktionen-datenauswertung.html"><a href="beschreibung-funktionen-datenauswertung.html"><i class="fa fa-check"></i><b>3</b> Beschreibung Funktionen: Datenauswertung</a><ul>
+<li class="chapter" data-level="3.1" data-path="beschreibung-funktionen-datenauswertung.html"><a href="beschreibung-funktionen-datenauswertung.html#grafische-darstellung-der-daten"><i class="fa fa-check"></i><b>3.1</b> Grafische Darstellung der Daten</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Datenanalyse: Eye-tracking 2020/2021</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="beschreibung-funktionen-datenauswertung" class="section level1">
+<h1><span class="header-section-number">Kapitel 3</span> Beschreibung Funktionen: Datenauswertung</h1>
+<p>Nach dem Setzen des Workspace und dem Kopieren des Datensatzes in Workspace Pfad: Einlesen der Daten mit <strong>read.table()</strong>. <strong>head(list)</strong> stellt die ersten 6 Zeilen des eingelesenen Datensatzes dar.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Einlesen</span>
+<span class="kw">read.table</span>(<span class="st">&quot;gugVP11.txt&quot;</span>, <span class="dt">header =</span> T)
+
+<span class="co"># Speichern in Variable list</span>
+list =<span class="st"> </span><span class="kw">read.table</span>(<span class="st">&quot;gugVP11.txt&quot;</span>, <span class="dt">header =</span> T)
+
+<span class="co"># Anzeigen der Zeilen 1:6 der Variablen </span>
+<span class="co"># list, die den eingelesenen Datensatz enthält.</span>
+<span class="kw">head</span>(list)</code></pre></div>
+<p><strong>str()</strong> gibt die Eigenschaften und Datentypen des eingelesenen Datensatzes für alle Spalten wieder. Dies hilft bei der Überprüfung, ob der Datensatz korrekt eingelesen wurde.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str</span>(list)</code></pre></div>
+<p><strong>table()</strong> listet für eine gegebene Spalte die Häufigkeit der auftauchenden Werte auf. Dies gibt die Möglichkeit nach Versuchspersonen oder Items zu schauen, die eventuell nicht besonders funktioniert haben. Ein Beispiel:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">table</span>(list<span class="op">$</span>code)</code></pre></div>
+<p><strong>c()</strong> Aneinanderreihung verschiedener übergebener Werte in eine Liste</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">45</span>,<span class="dv">21</span>,<span class="dv">17</span>)</code></pre></div>
+<pre><code>## [1]  3 45 21 17</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">variable =<span class="st"> </span><span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">45</span>,<span class="dv">21</span>,<span class="dv">17</span>)
+variable</code></pre></div>
+<pre><code>## [1]  3 45 21 17</code></pre>
+<p><strong>rbind()</strong>: Datensätze mit gleicher Spaltenzahl werden untereinander angeordnet (Zeilen zusammengefügt) <strong>cbind()</strong>: Datensätze mit gleicher Zeilenanzahl werden nebeneinander angeordnet (Spalten zusammengefügt)</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># list[&lt;zeile&gt;,&lt;spalte&gt;]</span>
+<span class="co"># Ordnet die Zeilen 1 bis 3 und 10 bis 20</span>
+<span class="co"># des Datensatzes list untereinander an</span>
+<span class="kw">rbind</span>(list[<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>,],list[<span class="dv">10</span><span class="op">:</span><span class="dv">20</span>,])
+
+<span class="co"># Ordnet die Spalten des Datensatzes list </span>
+<span class="co"># nebeneinander an</span>
+<span class="kw">cbind</span>(list[,<span class="dv">2</span><span class="op">:</span><span class="dv">4</span>],list[,<span class="dv">6</span><span class="op">:</span><span class="dv">8</span>])</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># code: Übungen 1-6</span>
+<span class="co"># code: kritische Items animat: 7 &lt; 400</span>
+<span class="co"># code: Filler 401 - 460</span>
+<span class="co"># kritische Items inanimat:  &gt; 500</span>
+
+<span class="co">#list[&lt;zeile&gt;,&lt;spalte&gt;]</span>
+
+list1 =<span class="st"> </span><span class="kw">rbind</span>(list[(list<span class="op">$</span>code <span class="op">&gt;</span><span class="st"> </span><span class="dv">7</span>) <span class="op">&amp;</span><span class="st"> </span>(list<span class="op">$</span>code <span class="op">&lt;</span><span class="st"> </span><span class="dv">400</span>),],list[list<span class="op">$</span>code <span class="op">&gt;</span><span class="st"> </span><span class="dv">500</span>,])</code></pre></div>
+<p><strong>dim()</strong> gibt die Dimensionen des übergebenen Datensatzes zurück: Anzahl der Zeilen und Anzahl der Spalten.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dim</span>(list)</code></pre></div>
+<p><strong>%%</strong> Berechne Modulo zwischen zwei Zahlen. Die bisher dargestellten Berechnungen haben bekannte und gebräuchliche Formaten. Der Modulo gibt den Rest eine ganzzahligen Division wieder. 8 %% 2 = 0, weil bei der ganzzahligen Division nur 0 übrig bleibt. 8 %% 3 = 2, weil bei der ganzzahligen Division von 8 % 3, 2 übrig bleibt. (8 / 3 = 2.67; 2 * 3 = 6; 8 - 6 = 2)</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Item und Bedingungen werden zusammen in Code</span>
+<span class="co"># dargestellt mit diesen Schritten und der Hilfe des </span>
+<span class="co"># Modulo Operators werden die beiden getrennt </span>
+<span class="co"># im Datensatz dargestellt</span>
+
+<span class="co"># dieser Befehl schreibt die Bedingung in Spalte 10</span>
+list1[,<span class="dv">10</span>] =<span class="st"> </span>list1<span class="op">$</span>code <span class="op">%%</span><span class="st"> </span><span class="dv">10</span>
+
+<span class="co"># dieser Befehl schreibt das Item (numerierten kritischen Satz) in Spalte 11</span>
+list1[,<span class="dv">11</span>] =<span class="st"> </span>(list1<span class="op">$</span>code <span class="op">-</span><span class="st"> </span>list1<span class="op">$</span>code <span class="op">%%</span><span class="st"> </span><span class="dv">10</span>) <span class="op">/</span><span class="st"> </span><span class="dv">10</span></code></pre></div>
+<p>Einfache Berechnung der Rereading Times: Total Reading Time (Spalte 8) - First Path Time (Spalte 6)</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Berechnung der Rereading Times, Ergebnis wird </span>
+<span class="co"># in Spalte 12 geschrieben</span>
+list1[,<span class="dv">12</span>] =<span class="st"> </span>list1[,<span class="dv">8</span>] <span class="op">-</span><span class="st"> </span>list1[,<span class="dv">6</span>]</code></pre></div>
+<p><strong>colnames()</strong> schreibt Spaltennamen für einen Datensatz - ähnlich funktioniert <strong>rownames()</strong> für die Zeilen</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Spaltennamen zuordnen (kürzen der übegebenen Spaltennamen)</span>
+<span class="kw">colnames</span>(list1) =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;VP&quot;</span>,<span class="st">&quot;list&quot;</span>,<span class="st">&quot;code&quot;</span>,<span class="st">&quot;answ&quot;</span>,<span class="st">&quot;FFD&quot;</span>,<span class="st">&quot;FPT&quot;</span>,<span class="st">&quot;RPT&quot;</span>,<span class="st">&quot;TRT&quot;</span>,<span class="st">&quot;IA&quot;</span>,<span class="st">&quot;cond&quot;</span>,<span class="st">&quot;item&quot;</span>,<span class="st">&quot;RER&quot;</span>)</code></pre></div>
+<p>Das Experiment hatte 4 Listen (mixed Design mit within subjects Design Faktor and between subjects Design Faktor). Liste 1 + 2 animate Bedingungen, Liste 3 + 4 inanimate Bedingungen. Folgende Befehle, um den beiden Bedingungen in Liste 3 + 4, die Bedingungen 3 (grammatisch, inanimat) und Bedingung 4 (ungrammatisch, inanimat zuzuordnen. Bedingung 1 soll grammatisch/animat und Bedingung 2 ungrammatisch/animat sein.)</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># ordne den inanimaten Bedingungen die Codierung 3 und 4 zu</span>
+list1[(list1<span class="op">$</span>cond <span class="op">==</span><span class="st"> </span><span class="dv">1</span>)<span class="op">&amp;</span><span class="st"> </span>(list1<span class="op">$</span>code <span class="op">&gt;</span><span class="st"> </span><span class="dv">500</span>),<span class="dv">10</span>] =<span class="st"> </span><span class="dv">3</span>
+
+list1[(list1<span class="op">$</span>cond <span class="op">==</span><span class="st"> </span><span class="dv">2</span>)<span class="op">&amp;</span><span class="st"> </span>(list1<span class="op">$</span>code <span class="op">&gt;</span><span class="st"> </span><span class="dv">500</span>),<span class="dv">10</span>] =<span class="st"> </span><span class="dv">4</span></code></pre></div>
+<p><strong>matrix()</strong> Befehl erstellt eine Matrix mit übergebenen Zahlen, in gegebener Spaltenanzahl und Zeilenanzahl dargestellt wird. Dadurch entsteht neue Tabelle.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Erstelle eine Matrix bestehend aus 6 Spalten </span>
+<span class="co">#und 4 Zeilen, die mit Nullen gefüllt sind</span>
+listffd =<span class="st"> </span><span class="kw">matrix</span>(<span class="dt">data =</span> <span class="dv">0</span>,<span class="dt">ncol=</span><span class="dv">6</span>,<span class="dt">nrow =</span> <span class="dv">4</span>)
+
+<span class="co"># 6 Spalten stellen die 6 Interest Areas da</span>
+<span class="co"># Spaltennamen für die Matrix</span>
+<span class="kw">colnames</span>(listffd) =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;ia1&quot;</span>,<span class="st">&quot;ia2&quot;</span>,<span class="st">&quot;ia3&quot;</span>,<span class="st">&quot;ia4&quot;</span>,<span class="st">&quot;ia5&quot;</span>,<span class="st">&quot;ia6&quot;</span>)
+
+<span class="co"># 4 Zeilen stellen die 4 Bedingungen da</span>
+<span class="co"># Zeilennamen für die Matrix</span>
+<span class="kw">rownames</span>(listffd) =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;cond1&quot;</span>,<span class="st">&quot;cond2&quot;</span>,<span class="st">&quot;cond3&quot;</span>,<span class="st">&quot;cond4&quot;</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Einzelne Beispielschritte für Mittelwertberechnung</span>
+
+<span class="co"># Zeige Datensatz für Bedingung 1 und Interest Area 1</span>
+list1[(list1<span class="op">$</span>cond <span class="op">==</span><span class="dv">1</span>)<span class="op">&amp;</span><span class="st"> </span>(list1<span class="op">$</span>IA <span class="op">==</span><span class="st"> </span><span class="dv">1</span>),]
+
+<span class="co"># Zeige die Werte der First Fixation Duration, </span>
+<span class="co">#für Bedingung 1 und Interest Area 1</span>
+list1[(list1<span class="op">$</span>cond <span class="op">==</span><span class="st"> </span><span class="dv">1</span>)<span class="op">&amp;</span>(list1<span class="op">$</span>IA <span class="op">==</span><span class="st"> </span><span class="dv">1</span>),<span class="dv">5</span>]
+
+<span class="co"># Berechne den Mittelwert der First Fixation Duration</span>
+<span class="co">#Werte für Bedingung 1 und Interest Area 1</span>
+<span class="kw">mean</span>(list1[(list1<span class="op">$</span>cond <span class="op">==</span><span class="st"> </span><span class="dv">1</span>)<span class="op">&amp;</span>(list1<span class="op">$</span>IA <span class="op">==</span><span class="st"> </span><span class="dv">1</span>),<span class="dv">5</span>])</code></pre></div>
+<p>Eine <strong>Funktion</strong> <strong>function()</strong> ist die Aneinanderreihung auszuführender Befehle. Man kann sie selbst definieren, schnell wiederholen und schnell anwenden.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&lt;</span>Name<span class="op">&gt;</span><span class="st"> </span><span class="er">=</span><span class="st"> </span><span class="cf">function</span>(<span class="op">&lt;</span>Liste von übergebenen Argumenten<span class="op">&gt;</span>){
+  <span class="op">&lt;</span>Befehle, die ausgeführt werden sollen<span class="op">&gt;</span>
+}
+
+
+<span class="co"># Funktion &quot;percent&quot; berechnet Prozent a von b in Variable d</span>
+<span class="co"># Name für erstellte Funktion kann selbst gewählt werden, </span>
+<span class="co"># &quot;percent&quot; hier entspricht einer Variable</span>
+percent =<span class="st"> </span><span class="cf">function</span>(a,b){ 
+    d =<span class="st"> </span><span class="dv">100</span><span class="op">/</span>b <span class="op">*</span><span class="st"> </span>a
+    d
+}
+<span class="co"># Beipielauführung dieser Funktion mit </span>
+<span class="co">#übergebenen Argumenten 34, 78</span>
+<span class="kw">percent</span>(<span class="dv">34</span>,<span class="dv">78</span>)
+<span class="er">}</span></code></pre></div>
+<p>Probiert die Funktion mit anderen Zahlen aus.</p>
+<p>Die folgende Funktion übergibt alle Mittelwerte (Bedingung 1 bis 4 auf allen Interest Areas 1 bis 6) in eine erstellte Matrix <strong>matr</strong>. (Die verwendeten <strong>for()</strong> Schleifen in der <strong>matall</strong> Funktion kann man sich einmal in der R-Dokumentation durchlesen, sind aber kein relevanter Teil unseres Praktikums.)</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Beispielfunktion zur Übergabe aller Mittelwerte</span>
+<span class="co"># in die erstellte Matrix</span>
+matall =<span class="st"> </span><span class="cf">function</span>(list,x){
+  matr =<span class="st"> </span><span class="kw">matrix</span>(<span class="dt">data =</span> <span class="dv">0</span>, <span class="dt">ncol =</span> <span class="dv">6</span>,<span class="dt">nrow =</span> <span class="dv">4</span>)
+  <span class="kw">colnames</span>(matr) =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;ia1&quot;</span>,<span class="st">&quot;ia2&quot;</span>,<span class="st">&quot;ia3&quot;</span>,<span class="st">&quot;ia4&quot;</span>,<span class="st">&quot;ia5&quot;</span>,<span class="st">&quot;ia6&quot;</span>)
+  <span class="kw">rownames</span>(matr) =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;cond1&quot;</span>,<span class="st">&quot;cond2&quot;</span>,<span class="st">&quot;cond3&quot;</span>,<span class="st">&quot;cond4&quot;</span>)
+  <span class="cf">for</span> (j <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">4</span>){
+    <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">6</span>){
+      matr[j,i] =<span class="st"> </span><span class="kw">mean</span>(list[(list<span class="op">$</span>cond<span class="op">==</span>j)<span class="op">&amp;</span>(list<span class="op">$</span>IA <span class="op">==</span>i),x], <span class="dt">na.rm=</span>T)
+    }
+  }
+  matr
+}</code></pre></div>
+<p>Wenn dieser Code für die Funktion ausgeführt wird, passiert erstmal gar nichts. Die Funktion muss aufgerufen werden und in der Klammer beide Argumente übergeben werden. Das Argument <strong>list</strong> sollte mit der <strong>list1</strong> übergeben werden, <strong>x</strong> enthält den Namen der Spalte, für den die Funktion ausgeführt werden soll.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Ausführung der Funktion, um Mittelwerte für </span>
+<span class="co"># die Lesezeit First Fixation Duration des Datensatzes</span>
+<span class="co">#list1 zu berechnen (First fixation Duration steht in Spalte 5)</span>
+listffd =<span class="st"> </span><span class="kw">matall</span>(list1,<span class="dv">5</span>)
+
+<span class="co"># Ausführung der Funktion, um Mittelwerte für </span>
+<span class="co"># die Lesezeit First Path Time des Datensatzes </span>
+<span class="co"># list1 zu berechnen (First Pass Time steht in Spalte 6)</span>
+listfpt =<span class="st"> </span><span class="kw">matall</span>(list1,<span class="dv">6</span>)
+
+<span class="co"># Ausführung der Funktion, um Mittelwerte </span>
+<span class="co"># für die Lesezeit Regression-Path Time des Datensatzes</span>
+<span class="co"># list1 zu berechnen (Regression Path Time steht in Spalte 7)</span>
+listrpt =<span class="st"> </span><span class="kw">matall</span>(list1,<span class="dv">7</span>)
+
+<span class="co"># Ausführung der Funktion, um Mittelwerte </span>
+<span class="co">#für die Lesezeit Total Reading Time des Datensatzes</span>
+<span class="co">#list1 zu berechnen (Total Reading Time steht in Spalte 8)</span>
+listtrt =<span class="st"> </span><span class="kw">matall</span>(list1,<span class="dv">8</span>)
+
+<span class="co"># Ausführung der Funktion, um Mittelwerte für die Lesezeit</span>
+<span class="co"># Rereading Time des Datensatzes list1 zu berechnen </span>
+<span class="co"># (Rereading Time steht in Spalte 12)</span>
+listrer =<span class="st"> </span><span class="kw">matall</span>(list1,<span class="dv">12</span>)</code></pre></div>
+<div id="grafische-darstellung-der-daten" class="section level2">
+<h2><span class="header-section-number">3.1</span> Grafische Darstellung der Daten</h2>
+<p>Mit der Erstellung von <strong>listffd</strong>, <strong>listfpt</strong>, <strong>listrpt</strong>, <strong>listtrt</strong> und <strong>listrer</strong> haben wir Tabellen, die die jeweiligen Lesezeiten in ms für alle Interest Areas 1 bis 6 und alle 4 Bedingungen darstellt. Unterschiede in den Mittelwerten lassen sich auch schon in den Tabellen ablesen. Trotzdem möchte man die manchmal Daten gern grafisch darstellen. <strong>R</strong> bietet dafür sehr viele verschiedene Pakete wie z.B. <em>ggplot</em> an. Die Verwendung von ggplot würde hier aber zu weit führen, da wir wirklich nur 3 Treffen für die Datenauswertung geplant hatten. Wir werden hier die Basisfunktionen von R benutzen. Wer sich da noch weiter reinarbeiten will, kann immer gern die offiziellen Seiten von R, die Hilfefunktion oder Google benutzen.</p>
+<p>Schaut Euch doch erstmal die erstellten Tabellen mit den Lesezeiten an</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">listffd
+listfpt
+listrpt
+listtrt
+listrer</code></pre></div>
+<p>Der folgende Befehl erstellt eine einfache Grafik der Lesezeiten in der übergebenen Tabelle da.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">matplot</span>(,<span class="kw">t</span>(listffd))</code></pre></div>
+<p>Die Grafik sieht ein bisschen langweilig und auch wenig informativ aus. Wir können verschiedene Informationen zufügen.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">matplot</span>(,<span class="kw">t</span>(listffd), <span class="dt">main =</span> <span class="kw">c</span>(<span class="st">&quot;First Fixation Durations auf den Interest Areas&quot;</span>),<span class="dt">type=</span><span class="st">&quot;l&quot;</span>,<span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;black&quot;</span>,<span class="st">&quot;grey&quot;</span>,<span class="st">&quot;darkblue&quot;</span>,<span class="st">&quot;lightblue&quot;</span>),<span class="dt">lwd=</span><span class="dv">6</span>,<span class="dt">axes=</span><span class="ot">FALSE</span>,<span class="dt">xlab=</span>(<span class="st">&quot;Interest Areas&quot;</span>),<span class="dt">ylab=</span><span class="st">&quot;Lesezeiten in ms&quot;</span>,<span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">6</span>),<span class="dt">lty=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>))</code></pre></div>
+<p>Probiert doch mal den obigen Befehl aus. Wenn eine Grafik erstellt wird, ändert doch mal ein paar der Einstellungen (z.B., Farbe, Liniendicke <em>lwd</em>, den Titel oder die Achsenbeschriftungen.</p>
+<p>Das folgende Beispiel zeigt, wie man die Grafik in ein .pdf Dokument exportieren kann.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Erstmal das Verzeichnis und den Namen angeben,</span>
+<span class="co"># unter der die Grafik gespeichert werden soll</span>
+
+<span class="kw">pdf</span>(<span class="st">&quot;&lt;Hier Ihr Verzeichnis + Name.pdf&gt;&quot;</span>)
+
+<span class="co"># Erstellt die Grafik</span>
+<span class="kw">matplot</span>(,<span class="kw">t</span>(listffd), <span class="dt">main =</span> <span class="kw">c</span>(<span class="st">&quot;First Fixation Durations auf den Interest Areas&quot;</span>),<span class="dt">type=</span><span class="st">&quot;l&quot;</span>,<span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;black&quot;</span>,<span class="st">&quot;grey&quot;</span>,<span class="st">&quot;darkblue&quot;</span>,<span class="st">&quot;lightblue&quot;</span>),<span class="dt">lwd=</span><span class="dv">6</span>,<span class="dt">axes=</span><span class="ot">FALSE</span>,<span class="dt">xlab=</span>(<span class="st">&quot;Interest Areas&quot;</span>),<span class="dt">ylab=</span><span class="st">&quot;Lesezeiten in ms&quot;</span>,<span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">6</span>),<span class="dt">lty=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>))
+
+<span class="co"># Fügt die Achsenbeschriftungen hinzu</span>
+<span class="kw">axis</span>(<span class="dv">1</span>,<span class="dv">1</span><span class="op">:</span><span class="dv">6</span>,<span class="kw">c</span>(<span class="st">&quot;IA1&quot;</span>,<span class="st">&quot;IA2&quot;</span>,<span class="st">&quot;IA3&quot;</span>,<span class="st">&quot;IA4&quot;</span>,<span class="st">&quot;IA5&quot;</span>,<span class="st">&quot;IA6&quot;</span>),<span class="dt">cex.axis =</span> <span class="dv">1</span>)
+<span class="kw">axis</span>(<span class="dv">2</span>, <span class="dt">cex.axis =</span> <span class="fl">1.0</span>)
+
+<span class="co"># Fügt eine Legende hinzu</span>
+<span class="kw">legend</span>(<span class="dt">x=</span><span class="kw">c</span>(<span class="fl">3.5</span>,<span class="dv">5</span>),
+       <span class="dt">y=</span><span class="kw">c</span>(<span class="dv">300</span>,<span class="dv">320</span>),
+       <span class="dt">legend =</span> <span class="kw">c</span>(<span class="st">&quot;cond1&quot;</span>,<span class="st">&quot;cond2&quot;</span>,<span class="st">&quot;cond3&quot;</span>,<span class="st">&quot;cond4&quot;</span>),
+       <span class="dt">lwd=</span><span class="dv">4</span>,
+       <span class="dt">lty=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>),
+       <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;black&quot;</span>,<span class="st">&quot;grey&quot;</span>,<span class="st">&quot;darkblue&quot;</span>,<span class="st">&quot;lightblue&quot;</span>),
+       <span class="dt">xjust=</span><span class="dv">1</span>,
+       <span class="dt">yjust=</span><span class="dv">1</span>,
+       <span class="dt">cex =</span> <span class="dv">1</span>)
+<span class="co">#trace=TRUE)</span>
+
+<span class="co"># Ende</span>
+<span class="kw">dev.off</span>()</code></pre></div>
+<p>Dieser Befehl wird eine Grafik erstellen und diese als .pdf exportieren. Bitte ausprobieren, schauen, ob die Grafik erstellt wurde und sich öffnen lässt. Danach einzelne Änderungen an der Formatierung ausprobieren (andere Farben, andere Achsenbeschriftungen, andere Titel o.ä.)</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="datenbeschreibungen-in-r.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["DataAnalysis.pdf", "DataAnalysis.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
