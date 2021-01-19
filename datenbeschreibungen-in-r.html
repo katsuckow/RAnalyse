@@ -24,7 +24,7 @@
 <meta name="author" content="Katja Suckow" />
 
 
-<meta name="date" content="2021-01-07" />
+<meta name="date" content="2021-01-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="index.html"/>
-
+<link rel="next" href="beschreibung-funktionen-für-datenauswertung.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -126,6 +126,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="2.4" data-path="datenbeschreibungen-in-r.html"><a href="datenbeschreibungen-in-r.html#r-matritzen"><i class="fa fa-check"></i><b>2.4</b> R-Matritzen</a></li>
 <li class="chapter" data-level="2.5" data-path="datenbeschreibungen-in-r.html"><a href="datenbeschreibungen-in-r.html#r---nützliche-funktionen"><i class="fa fa-check"></i><b>2.5</b> R - nützliche Funktionen</a></li>
 </ul></li>
+<li class="chapter" data-level="3" data-path="beschreibung-funktionen-für-datenauswertung.html"><a href="beschreibung-funktionen-für-datenauswertung.html"><i class="fa fa-check"></i><b>3</b> Beschreibung Funktionen für Datenauswertung</a></li>
+<li class="chapter" data-level="4" data-path="grafische-darstellung-der-daten.html"><a href="grafische-darstellung-der-daten.html"><i class="fa fa-check"></i><b>4</b> Grafische Darstellung der Daten</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -152,10 +154,11 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Daten einlesen</span>
 <span class="kw">getwd</span>()
 <span class="co"># Der Pfad zu Eurem Workspace ist auf jedem Rechner anders</span>
-<span class="co"># Deshalb läßt sich das nicht vorgeben und Ihr könnt diesen nicht einfach</span>
-<span class="co"># von jemand kopieren.</span>
+<span class="co"># Deshalb läßt sich das nicht vorgeben und Ihr könnt</span>
+<span class="co"># diesen nicht einfach von jemand kopieren.</span>
 <span class="kw">setwd</span>(<span class="st">&quot;&lt;Setzt bitte hier den Pfad zum Workspace auf Eurem Rechner ein&gt;&quot;</span>)
-<span class="co"># Der Datensatz sollte 10VP.dat sollte im Pfad Eures Workspace gespeichert sein</span>
+<span class="co"># Der Datensatz sollte gugVP11.dat </span>
+<span class="co"># sollte im Pfad Eures Workspace gespeichert sein</span>
 list =<span class="st"> </span><span class="kw">read.table</span>(<span class="st">&quot;gugVP11.txt&quot;</span>,<span class="dt">header =</span> T)</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Inhalt des Workspace</span>
 <span class="co"># welche Variablen wurden eingelesen oder selbst erstellt</span>
@@ -173,7 +176,8 @@ list =<span class="st"> </span><span class="kw">read.table</span>(<span class="s
 <span class="co">#typeof() gibt den Datentyp einer Variable wieder </span>
 <span class="kw">typeof</span>(x)</code></pre></div>
 <pre><code>## [1] &quot;integer&quot;</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#str() listet den Datentyp und die verschiedenen Ausprägungen einer Variable auf</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#str() listet den Datentyp und die </span>
+<span class="co">#verschiedenen Ausprägungen einer Variable auf</span>
 <span class="kw">str</span>(x)</code></pre></div>
 <pre><code>##  int [1:30] 1 2 3 4 5 6 7 8 9 10 ...</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#length() gibt die Länge einer Liste wieder</span>
@@ -230,10 +234,12 @@ list =<span class="st"> </span><span class="kw">read.table</span>(<span class="s
 <h2><span class="header-section-number">2.3</span> R-Data frames</h2>
 <p><strong>Data Frames</strong> ist die Datenstruktur in Form einer Tabelle (zweidimensional) mit <strong>Zeilen</strong> und <strong>Spalten</strong>. Deren Werte kann eine Mischung aus Zahlen und Buchstaben enthalten.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># ein Data Frame hat folgende Form</span>
-<span class="co"># diese Information wird später noch einmal wichtig</span>
+<span class="co"># diese Information wird später</span>
+<span class="co"># noch einmal wichtig</span>
 name[<span class="op">&lt;</span>zeile<span class="op">&gt;</span>, <span class="op">&lt;</span>spalte<span class="op">&gt;</span>]</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># so kann man eine Liste generieren</span>
-<span class="co"># c() steht für &quot;concatenate&quot;&quot;, verbinden oder aneinanderreihen </span>
+<span class="co"># c() steht für &quot;concatenate&quot;&quot;, verbinden </span>
+<span class="co"># oder aneinanderreihen </span>
 y =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Unsinn&quot;</span>,<span class="st">&quot;Quatsch&quot;</span>,<span class="st">&quot;rot&quot;</span>)
 y</code></pre></div>
 <pre><code>## [1] &quot;Unsinn&quot;  &quot;Quatsch&quot; &quot;rot&quot;</code></pre>
@@ -249,8 +255,9 @@ a</code></pre></div>
 <div id="r-matritzen" class="section level2">
 <h2><span class="header-section-number">2.4</span> R-Matritzen</h2>
 <p>Matritzen in <strong>R</strong> haben ähnlich wie Dataframes die Form einer Tabelle, nur bestehen Matritzen nur aus Zahlen und enthalten keine Buchstaben.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># so kann man eine Matrix von 1 bis 30 aufsteigend erstellen </span>
-<span class="co">#und diese auf 10 Spalten und 3 Zeilen verteilen</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># so kann man eine Matrix von 1 bis 30 </span>
+<span class="co"># aufsteigend erstellen und diese auf </span>
+<span class="co"># 10 Spalten und 3 Zeilen verteilen</span>
 a =<span class="st"> </span><span class="kw">matrix</span>(<span class="dt">data =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">30</span>, <span class="dt">ncol =</span> <span class="dv">10</span>, <span class="dt">nrow =</span> <span class="dv">3</span>, <span class="dt">byrow =</span> <span class="ot">TRUE</span>)
 
 <span class="co"># so sieht der Inhalt dann aus</span>
@@ -263,24 +270,30 @@ a</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dim</span>(a)</code></pre></div>
 <pre><code>## [1]  3 10</code></pre>
 <p>Hier zeigt sich die schon angedeutete Anordnung in den eckigen Klammern: zuerst die links die <strong>Zeile</strong> dann rechts die <strong>Spalte</strong>.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># folgender Code zeigt, wie man auf einzelne Spalten zugreifen kann</span>
-<span class="co"># so kann man sich die 1. Spalte der Tabelle anzeigen lassen</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># folgender Code zeigt, wie man auf einzelne </span>
+<span class="co"># Spalten zugreifen kann so kann man sich die </span>
+<span class="co"># 1. Spalte der Tabelle anzeigen lassen</span>
 a[,<span class="dv">1</span>]</code></pre></div>
 <pre><code>## [1]  1 11 21</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># hier zeigt sich, wie man sich die 1. Zeile der Tabelle anzeigen lassen kann</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># hier zeigt sich, wie man sich die 1. Zeile </span>
+<span class="co"># der Tabelle anzeigen lassen kann</span>
 a[<span class="dv">1</span>,]</code></pre></div>
 <pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
 <p>Die <strong>mean()</strong> Funktion gibt den Mittelwert von einer Reihe von Zahlen wieder</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># hier wird der Mittelwert der 1. Zeile der Tabelle a ermittelt und ausgegeben</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># hier wird der Mittelwert der 1. Zeile der </span>
+<span class="co"># Tabelle a ermittelt und ausgegeben</span>
 <span class="kw">mean</span>(a[<span class="dv">1</span>,])</code></pre></div>
 <pre><code>## [1] 5.5</code></pre>
 <p>Man kann in der Tabelle den einzelnen Spalten und Zeilen Namen geben. Falls dies im originalen eingelesenen Datensatz nicht schon geschehen ist, gibt es hierfür die Funktionen <strong>colnames()</strong> und <strong>rownames()</strong></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># die einzelnen Spalten werden alphabetisch angeordnet</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># die einzelnen Spalten werden alphabetisch</span>
+<span class="co"># angeordnet</span>
 <span class="kw">colnames</span>(a) =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;a&quot;</span>,<span class="st">&quot;b&quot;</span>,<span class="st">&quot;c&quot;</span>,<span class="st">&quot;d&quot;</span>,<span class="st">&quot;e&quot;</span>,<span class="st">&quot;f&quot;</span>,<span class="st">&quot;g&quot;</span>,<span class="st">&quot;h&quot;</span>,<span class="st">&quot;i&quot;</span>,<span class="st">&quot;j&quot;</span>)
 
-<span class="co"># die einzelnen Zeilen bekommen so einen eigenen Farbnamen</span>
-<span class="co"># wenn die Zuweisungen Buchstaben enthalten, müssen diese in Hochkommata geschrieben werden</span>
-<span class="co"># bei der Zuweisung von Zahlen, müssen diese nicht in Hochkommata stehen</span>
+<span class="co"># die einzelnen Zeilen bekommen so einen eigenen</span>
+<span class="co"># Farbnamen wenn die Zuweisungen Buchstaben </span>
+<span class="co"># enthalten, müssen diese in Hochkommata geschrieben </span>
+<span class="co"># werden bei der Zuweisung von Zahlen, müssen </span>
+<span class="co"># diese nicht in Hochkommata stehen</span>
 <span class="kw">rownames</span>(a) =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;rot&quot;</span>,<span class="st">&quot;blau&quot;</span>,<span class="st">&quot;weiss&quot;</span>)
 
 <span class="co"># gib den Inhalt der Tabelle a aus</span>
@@ -352,7 +365,6 @@ percent =<span class="st"> </span><span class="cf">function</span>(a,b){
 }
 <span class="kw">percent</span>(<span class="dv">34</span>,<span class="dv">78</span>)</code></pre></div>
 <pre><code>## [1] 43.58974</code></pre>
-
 </div>
 </div>
             </section>
@@ -360,8 +372,8 @@ percent =<span class="st"> </span><span class="cf">function</span>(a,b){
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="beschreibung-funktionen-für-datenauswertung.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

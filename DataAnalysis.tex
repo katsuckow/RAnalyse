@@ -112,7 +112,7 @@
 
 \title{Datenanalyse: Eye-tracking 2020/2021}
 \author{Katja Suckow}
-\date{2021-01-07}
+\date{2021-01-19}
 
 \begin{document}
 \maketitle
@@ -808,10 +808,11 @@ Kurze Zusammenfassung einiger zentraler Funktionen für das Praktikum.
 \CommentTok{# Daten einlesen}
 \KeywordTok{getwd}\NormalTok{()}
 \CommentTok{# Der Pfad zu Eurem Workspace ist auf jedem Rechner anders}
-\CommentTok{# Deshalb läßt sich das nicht vorgeben und Ihr könnt diesen nicht einfach}
-\CommentTok{# von jemand kopieren.}
+\CommentTok{# Deshalb läßt sich das nicht vorgeben und Ihr könnt}
+\CommentTok{# diesen nicht einfach von jemand kopieren.}
 \KeywordTok{setwd}\NormalTok{(}\StringTok{"<Setzt bitte hier den Pfad zum Workspace auf Eurem Rechner ein>"}\NormalTok{)}
-\CommentTok{# Der Datensatz sollte 10VP.dat sollte im Pfad Eures Workspace gespeichert sein}
+\CommentTok{# Der Datensatz sollte gugVP11.dat }
+\CommentTok{# sollte im Pfad Eures Workspace gespeichert sein}
 \NormalTok{list =}\StringTok{ }\KeywordTok{read.table}\NormalTok{(}\StringTok{"gugVP11.txt"}\NormalTok{,}\DataTypeTok{header =}\NormalTok{ T)}
 \end{Highlighting}
 \end{Shaded}
@@ -851,7 +852,8 @@ sein.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{#str() listet den Datentyp und die verschiedenen Ausprägungen einer Variable auf}
+\CommentTok{#str() listet den Datentyp und die }
+\CommentTok{#verschiedenen Ausprägungen einer Variable auf}
 \KeywordTok{str}\NormalTok{(x)}
 \end{Highlighting}
 \end{Shaded}
@@ -1036,7 +1038,8 @@ kann eine Mischung aus Zahlen und Buchstaben enthalten.
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{# ein Data Frame hat folgende Form}
-\CommentTok{# diese Information wird später noch einmal wichtig}
+\CommentTok{# diese Information wird später}
+\CommentTok{# noch einmal wichtig}
 \NormalTok{name[}\OperatorTok{<}\NormalTok{zeile}\OperatorTok{>}\NormalTok{, }\OperatorTok{<}\NormalTok{spalte}\OperatorTok{>}\NormalTok{]}
 \end{Highlighting}
 \end{Shaded}
@@ -1044,7 +1047,8 @@ kann eine Mischung aus Zahlen und Buchstaben enthalten.
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{# so kann man eine Liste generieren}
-\CommentTok{# c() steht für "concatenate"", verbinden oder aneinanderreihen }
+\CommentTok{# c() steht für "concatenate"", verbinden }
+\CommentTok{# oder aneinanderreihen }
 \NormalTok{y =}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"Unsinn"}\NormalTok{,}\StringTok{"Quatsch"}\NormalTok{,}\StringTok{"rot"}\NormalTok{)}
 \NormalTok{y}
 \end{Highlighting}
@@ -1080,8 +1084,9 @@ Buchstaben.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{# so kann man eine Matrix von 1 bis 30 aufsteigend erstellen }
-\CommentTok{#und diese auf 10 Spalten und 3 Zeilen verteilen}
+\CommentTok{# so kann man eine Matrix von 1 bis 30 }
+\CommentTok{# aufsteigend erstellen und diese auf }
+\CommentTok{# 10 Spalten und 3 Zeilen verteilen}
 \NormalTok{a =}\StringTok{ }\KeywordTok{matrix}\NormalTok{(}\DataTypeTok{data =} \DecValTok{1}\OperatorTok{:}\DecValTok{30}\NormalTok{, }\DataTypeTok{ncol =} \DecValTok{10}\NormalTok{, }\DataTypeTok{nrow =} \DecValTok{3}\NormalTok{, }\DataTypeTok{byrow =} \OtherTok{TRUE}\NormalTok{)}
 
 \CommentTok{# so sieht der Inhalt dann aus}
@@ -1116,8 +1121,9 @@ zuerst die links die \textbf{Zeile} dann rechts die \textbf{Spalte}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{# folgender Code zeigt, wie man auf einzelne Spalten zugreifen kann}
-\CommentTok{# so kann man sich die 1. Spalte der Tabelle anzeigen lassen}
+\CommentTok{# folgender Code zeigt, wie man auf einzelne }
+\CommentTok{# Spalten zugreifen kann so kann man sich die }
+\CommentTok{# 1. Spalte der Tabelle anzeigen lassen}
 \NormalTok{a[,}\DecValTok{1}\NormalTok{]}
 \end{Highlighting}
 \end{Shaded}
@@ -1128,7 +1134,8 @@ zuerst die links die \textbf{Zeile} dann rechts die \textbf{Spalte}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{# hier zeigt sich, wie man sich die 1. Zeile der Tabelle anzeigen lassen kann}
+\CommentTok{# hier zeigt sich, wie man sich die 1. Zeile }
+\CommentTok{# der Tabelle anzeigen lassen kann}
 \NormalTok{a[}\DecValTok{1}\NormalTok{,]}
 \end{Highlighting}
 \end{Shaded}
@@ -1142,7 +1149,8 @@ Zahlen wieder
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{# hier wird der Mittelwert der 1. Zeile der Tabelle a ermittelt und ausgegeben}
+\CommentTok{# hier wird der Mittelwert der 1. Zeile der }
+\CommentTok{# Tabelle a ermittelt und ausgegeben}
 \KeywordTok{mean}\NormalTok{(a[}\DecValTok{1}\NormalTok{,])}
 \end{Highlighting}
 \end{Shaded}
@@ -1158,12 +1166,15 @@ ist, gibt es hierfür die Funktionen \textbf{colnames()} und
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{# die einzelnen Spalten werden alphabetisch angeordnet}
+\CommentTok{# die einzelnen Spalten werden alphabetisch}
+\CommentTok{# angeordnet}
 \KeywordTok{colnames}\NormalTok{(a) =}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"a"}\NormalTok{,}\StringTok{"b"}\NormalTok{,}\StringTok{"c"}\NormalTok{,}\StringTok{"d"}\NormalTok{,}\StringTok{"e"}\NormalTok{,}\StringTok{"f"}\NormalTok{,}\StringTok{"g"}\NormalTok{,}\StringTok{"h"}\NormalTok{,}\StringTok{"i"}\NormalTok{,}\StringTok{"j"}\NormalTok{)}
 
-\CommentTok{# die einzelnen Zeilen bekommen so einen eigenen Farbnamen}
-\CommentTok{# wenn die Zuweisungen Buchstaben enthalten, müssen diese in Hochkommata geschrieben werden}
-\CommentTok{# bei der Zuweisung von Zahlen, müssen diese nicht in Hochkommata stehen}
+\CommentTok{# die einzelnen Zeilen bekommen so einen eigenen}
+\CommentTok{# Farbnamen wenn die Zuweisungen Buchstaben }
+\CommentTok{# enthalten, müssen diese in Hochkommata geschrieben }
+\CommentTok{# werden bei der Zuweisung von Zahlen, müssen }
+\CommentTok{# diese nicht in Hochkommata stehen}
 \KeywordTok{rownames}\NormalTok{(a) =}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"rot"}\NormalTok{,}\StringTok{"blau"}\NormalTok{,}\StringTok{"weiss"}\NormalTok{)}
 
 \CommentTok{# gib den Inhalt der Tabelle a aus}
@@ -1310,6 +1321,385 @@ Beispiel einer Funktion. Probiert diese doch einmal aus!
 \begin{verbatim}
 ## [1] 43.58974
 \end{verbatim}
+
+\chapter{Beschreibung Funktionen für
+Datenauswertung}\label{beschreibung-funktionen-fuxfcr-datenauswertung}
+
+Nach dem Setzen des Workspace und dem Kopieren des Datensatzes in
+Workspace Pfad: Einlesen der Daten mit \textbf{read.table()}.
+\textbf{head(list)} stellt die ersten 6 Zeilen des eingelesenen
+Datensatzes dar.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Einlesen}
+\KeywordTok{read.table}\NormalTok{(}\StringTok{"gugVP11.txt"}\NormalTok{, }\DataTypeTok{header =}\NormalTok{ T)}
+
+\CommentTok{# Speichern in Variable list}
+\NormalTok{list =}\StringTok{ }\KeywordTok{read.table}\NormalTok{(}\StringTok{"gugVP11.txt"}\NormalTok{, }\DataTypeTok{header =}\NormalTok{ T)}
+
+\CommentTok{# Anzeigen der Zeilen 1:6 der Variablen }
+\CommentTok{# list, die den eingelesenen Datensatz enthält.}
+\KeywordTok{head}\NormalTok{(list)}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{str()} gibt die Eigenschaften und Datentypen des eingelesenen
+Datensatzes für alle Spalten wieder. Dies hilft bei der Überprüfung, ob
+der Datensatz korrekt eingelesen wurde.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{str}\NormalTok{(list)}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{table()} listet für eine gegebene Spalte die Häufigkeit der
+auftauchenden Werte auf. Dies gibt die Möglichkeit nach Versuchspersonen
+oder Items zu schauen, die eventuell nicht besonders funktioniert haben.
+Ein Beispiel:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{table}\NormalTok{(list}\OperatorTok{$}\NormalTok{code)}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{c()} Aneinanderreihung verschiedener übergebener Werte in eine
+Liste
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{c}\NormalTok{(}\DecValTok{3}\NormalTok{,}\DecValTok{45}\NormalTok{,}\DecValTok{21}\NormalTok{,}\DecValTok{17}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1]  3 45 21 17
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{variable =}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{3}\NormalTok{,}\DecValTok{45}\NormalTok{,}\DecValTok{21}\NormalTok{,}\DecValTok{17}\NormalTok{)}
+\NormalTok{variable}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1]  3 45 21 17
+\end{verbatim}
+
+\textbf{rbind()}: Datensätze mit gleicher Spaltenzahl werden
+untereinander angeordnet (Zeilen zusammengefügt) \textbf{cbind()}:
+Datensätze mit gleicher Zeilenanzahl werden nebeneinander angeordnet
+(Spalten zusammengefügt)
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# list[<zeile>,<spalte>]}
+\CommentTok{# Ordnet die Zeilen 1 bis 3 und 10 bis 20}
+\CommentTok{# des Datensatzes list untereinander an}
+\KeywordTok{rbind}\NormalTok{(list[}\DecValTok{1}\OperatorTok{:}\DecValTok{3}\NormalTok{,],list[}\DecValTok{10}\OperatorTok{:}\DecValTok{20}\NormalTok{,])}
+
+\CommentTok{# Ordnet die Spalten des Datensatzes list }
+\CommentTok{# nebeneinander an}
+\KeywordTok{cbind}\NormalTok{(list[,}\DecValTok{2}\OperatorTok{:}\DecValTok{4}\NormalTok{],list[,}\DecValTok{6}\OperatorTok{:}\DecValTok{8}\NormalTok{])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# code: Übungen 1-6}
+\CommentTok{# code: kritische Items animat: 7 < 400}
+\CommentTok{# code: Filler 401 - 460}
+\CommentTok{# kritische Items inanimat:  > 500}
+
+\CommentTok{#list[<zeile>,<spalte>]}
+
+\NormalTok{list1 =}\StringTok{ }\KeywordTok{rbind}\NormalTok{(list[(list}\OperatorTok{$}\NormalTok{code }\OperatorTok{>}\StringTok{ }\DecValTok{7}\NormalTok{) }\OperatorTok{&}\StringTok{ }\NormalTok{(list}\OperatorTok{$}\NormalTok{code }\OperatorTok{<}\StringTok{ }\DecValTok{400}\NormalTok{),],list[list}\OperatorTok{$}\NormalTok{code }\OperatorTok{>}\StringTok{ }\DecValTok{500}\NormalTok{,])}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{dim()} gibt die Dimensionen des übergebenen Datensatzes zurück:
+Anzahl der Zeilen und Anzahl der Spalten.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{dim}\NormalTok{(list)}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{\%\%} Berechne Modulo zwischen zwei Zahlen. Die bisher
+dargestellten Berechnungen haben bekannte und gebräuchliche Formaten.
+Der Modulo gibt den Rest eine ganzzahligen Division wieder. 8 \%\% 2 =
+0, weil bei der ganzzahligen Division nur 0 übrig bleibt. 8 \%\% 3 = 2,
+weil bei der ganzzahligen Division von 8 \% 3, 2 übrig bleibt. (8 / 3 =
+2.67; 2 * 3 = 6; 8 - 6 = 2)
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Item und Bedingungen werden zusammen in Code}
+\CommentTok{# dargestellt mit diesen Schritten und der Hilfe des }
+\CommentTok{# Modulo Operators werden die beiden getrennt }
+\CommentTok{# im Datensatz dargestellt}
+
+\CommentTok{# dieser Befehl schreibt die Bedingung in Spalte 10}
+\NormalTok{list1[,}\DecValTok{10}\NormalTok{] =}\StringTok{ }\NormalTok{list1}\OperatorTok{$}\NormalTok{code }\OperatorTok{%%}\StringTok{ }\DecValTok{10}
+
+\CommentTok{# dieser Befehl schreibt das Item (numerierten kritischen Satz) in Spalte 11}
+\NormalTok{list1[,}\DecValTok{11}\NormalTok{] =}\StringTok{ }\NormalTok{(list1}\OperatorTok{$}\NormalTok{code }\OperatorTok{-}\StringTok{ }\NormalTok{list1}\OperatorTok{$}\NormalTok{code }\OperatorTok{%%}\StringTok{ }\DecValTok{10}\NormalTok{) }\OperatorTok{/}\StringTok{ }\DecValTok{10}
+\end{Highlighting}
+\end{Shaded}
+
+Einfache Berechnung der Rereading Times: Total Reading Time (Spalte 8) -
+First Path Time (Spalte 6)
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Berechnung der Rereading Times, Ergebnis wird }
+\CommentTok{# in Spalte 12 geschrieben}
+\NormalTok{list1[,}\DecValTok{12}\NormalTok{] =}\StringTok{ }\NormalTok{list1[,}\DecValTok{8}\NormalTok{] }\OperatorTok{-}\StringTok{ }\NormalTok{list1[,}\DecValTok{6}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{colnames()} schreibt Spaltennamen für einen Datensatz - ähnlich
+funktioniert \textbf{rownames()} für die Zeilen
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Spaltennamen zuordnen (kürzen der übegebenen Spaltennamen)}
+\KeywordTok{colnames}\NormalTok{(list1) =}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"VP"}\NormalTok{,}\StringTok{"list"}\NormalTok{,}\StringTok{"code"}\NormalTok{,}\StringTok{"answ"}\NormalTok{,}\StringTok{"FFD"}\NormalTok{,}\StringTok{"FPT"}\NormalTok{,}\StringTok{"RPT"}\NormalTok{,}\StringTok{"TRT"}\NormalTok{,}\StringTok{"IA"}\NormalTok{,}\StringTok{"cond"}\NormalTok{,}\StringTok{"item"}\NormalTok{,}\StringTok{"RER"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Das Experiment hatte 4 Listen (mixed Design mit within subjects Design
+Faktor and between subjects Design Faktor). Liste 1 + 2 animate
+Bedingungen, Liste 3 + 4 inanimate Bedingungen. Folgende Befehle, um den
+beiden Bedingungen in Liste 3 + 4, die Bedingungen 3 (grammatisch,
+inanimat) und Bedingung 4 (ungrammatisch, inanimat zuzuordnen. Bedingung
+1 soll grammatisch/animat und Bedingung 2 ungrammatisch/animat sein.)
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# ordne den inanimaten Bedingungen die Codierung 3 und 4 zu}
+\NormalTok{list1[(list1}\OperatorTok{$}\NormalTok{cond }\OperatorTok{==}\StringTok{ }\DecValTok{1}\NormalTok{)}\OperatorTok{&}\StringTok{ }\NormalTok{(list1}\OperatorTok{$}\NormalTok{code }\OperatorTok{>}\StringTok{ }\DecValTok{500}\NormalTok{),}\DecValTok{10}\NormalTok{] =}\StringTok{ }\DecValTok{3}
+
+\NormalTok{list1[(list1}\OperatorTok{$}\NormalTok{cond }\OperatorTok{==}\StringTok{ }\DecValTok{2}\NormalTok{)}\OperatorTok{&}\StringTok{ }\NormalTok{(list1}\OperatorTok{$}\NormalTok{code }\OperatorTok{>}\StringTok{ }\DecValTok{500}\NormalTok{),}\DecValTok{10}\NormalTok{] =}\StringTok{ }\DecValTok{4}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{matrix()} Befehl erstellt eine Matrix mit übergebenen Zahlen, in
+gegebener Spaltenanzahl und Zeilenanzahl dargestellt wird. Dadurch
+entsteht neue Tabelle.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Erstelle eine Matrix bestehend aus 6 Spalten }
+\CommentTok{#und 4 Zeilen, die mit Nullen gefüllt sind}
+\NormalTok{listffd =}\StringTok{ }\KeywordTok{matrix}\NormalTok{(}\DataTypeTok{data =} \DecValTok{0}\NormalTok{,}\DataTypeTok{ncol=}\DecValTok{6}\NormalTok{,}\DataTypeTok{nrow =} \DecValTok{4}\NormalTok{)}
+
+\CommentTok{# 6 Spalten stellen die 6 Interest Areas da}
+\CommentTok{# Spaltennamen für die Matrix}
+\KeywordTok{colnames}\NormalTok{(listffd) =}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"ia1"}\NormalTok{,}\StringTok{"ia2"}\NormalTok{,}\StringTok{"ia3"}\NormalTok{,}\StringTok{"ia4"}\NormalTok{,}\StringTok{"ia5"}\NormalTok{,}\StringTok{"ia6"}\NormalTok{)}
+
+\CommentTok{# 4 Zeilen stellen die 4 Bedingungen da}
+\CommentTok{# Zeilennamen für die Matrix}
+\KeywordTok{rownames}\NormalTok{(listffd) =}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"cond1"}\NormalTok{,}\StringTok{"cond2"}\NormalTok{,}\StringTok{"cond3"}\NormalTok{,}\StringTok{"cond4"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Einzelne Beispielschritte für Mittelwertberechnung}
+
+\CommentTok{# Zeige Datensatz für Bedingung 1 und Interest Area 1}
+\NormalTok{list1[(list1}\OperatorTok{$}\NormalTok{cond }\OperatorTok{==}\DecValTok{1}\NormalTok{)}\OperatorTok{&}\StringTok{ }\NormalTok{(list1}\OperatorTok{$}\NormalTok{IA }\OperatorTok{==}\StringTok{ }\DecValTok{1}\NormalTok{),]}
+
+\CommentTok{# Zeige die Werte der First Fixation Duration, }
+\CommentTok{#für Bedingung 1 und Interest Area 1}
+\NormalTok{list1[(list1}\OperatorTok{$}\NormalTok{cond }\OperatorTok{==}\StringTok{ }\DecValTok{1}\NormalTok{)}\OperatorTok{&}\NormalTok{(list1}\OperatorTok{$}\NormalTok{IA }\OperatorTok{==}\StringTok{ }\DecValTok{1}\NormalTok{),}\DecValTok{5}\NormalTok{]}
+
+\CommentTok{# Berechne den Mittelwert der First Fixation Duration}
+\CommentTok{#Werte für Bedingung 1 und Interest Area 1}
+\KeywordTok{mean}\NormalTok{(list1[(list1}\OperatorTok{$}\NormalTok{cond }\OperatorTok{==}\StringTok{ }\DecValTok{1}\NormalTok{)}\OperatorTok{&}\NormalTok{(list1}\OperatorTok{$}\NormalTok{IA }\OperatorTok{==}\StringTok{ }\DecValTok{1}\NormalTok{),}\DecValTok{5}\NormalTok{])}
+\end{Highlighting}
+\end{Shaded}
+
+Eine \textbf{Funktion} \textbf{function()} ist die Aneinanderreihung
+auszuführender Befehle. Man kann sie selbst definieren, schnell
+wiederholen und schnell anwenden.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{<}\NormalTok{Name}\OperatorTok{>}\StringTok{ }\ErrorTok{=}\StringTok{ }\ControlFlowTok{function}\NormalTok{(}\OperatorTok{<}\NormalTok{Liste von übergebenen Argumenten}\OperatorTok{>}\NormalTok{)\{}
+  \OperatorTok{<}\NormalTok{Befehle, die ausgeführt werden sollen}\OperatorTok{>}
+\NormalTok{\}}
+
+
+\CommentTok{# Funktion "percent" berechnet Prozent a von b in Variable d}
+\CommentTok{# Name für erstellte Funktion kann selbst gewählt werden, }
+\CommentTok{# "percent" hier entspricht einer Variable}
+\NormalTok{percent =}\StringTok{ }\ControlFlowTok{function}\NormalTok{(a,b)\{ }
+\NormalTok{    d =}\StringTok{ }\DecValTok{100}\OperatorTok{/}\NormalTok{b }\OperatorTok{*}\StringTok{ }\NormalTok{a}
+\NormalTok{    d}
+\NormalTok{\}}
+\CommentTok{# Beipielauführung dieser Funktion mit }
+\CommentTok{#übergebenen Argumenten 34, 78}
+\KeywordTok{percent}\NormalTok{(}\DecValTok{34}\NormalTok{,}\DecValTok{78}\NormalTok{)}
+\ErrorTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+Probiert die Funktion mit anderen Zahlen aus.
+
+Die folgende Funktion übergibt alle Mittelwerte (Bedingung 1 bis 4 auf
+allen Interest Areas 1 bis 6) in eine erstellte Matrix \textbf{matr}.
+(Die verwendeten \textbf{for()} Schleifen in der \textbf{matall}
+Funktion kann man sich einmal in der R-Dokumentation durchlesen, sind
+aber kein relevanter Teil unseres Praktikums.)
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Beispielfunktion zur Übergabe aller Mittelwerte}
+\CommentTok{# in die erstellte Matrix}
+\NormalTok{matall =}\StringTok{ }\ControlFlowTok{function}\NormalTok{(list,x)\{}
+\NormalTok{  matr =}\StringTok{ }\KeywordTok{matrix}\NormalTok{(}\DataTypeTok{data =} \DecValTok{0}\NormalTok{, }\DataTypeTok{ncol =} \DecValTok{6}\NormalTok{,}\DataTypeTok{nrow =} \DecValTok{4}\NormalTok{)}
+  \KeywordTok{colnames}\NormalTok{(matr) =}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"ia1"}\NormalTok{,}\StringTok{"ia2"}\NormalTok{,}\StringTok{"ia3"}\NormalTok{,}\StringTok{"ia4"}\NormalTok{,}\StringTok{"ia5"}\NormalTok{,}\StringTok{"ia6"}\NormalTok{)}
+  \KeywordTok{rownames}\NormalTok{(matr) =}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"cond1"}\NormalTok{,}\StringTok{"cond2"}\NormalTok{,}\StringTok{"cond3"}\NormalTok{,}\StringTok{"cond4"}\NormalTok{)}
+  \ControlFlowTok{for}\NormalTok{ (j }\ControlFlowTok{in} \DecValTok{1}\OperatorTok{:}\DecValTok{4}\NormalTok{)\{}
+    \ControlFlowTok{for}\NormalTok{(i }\ControlFlowTok{in} \DecValTok{1}\OperatorTok{:}\DecValTok{6}\NormalTok{)\{}
+\NormalTok{      matr[j,i] =}\StringTok{ }\KeywordTok{mean}\NormalTok{(list[(list}\OperatorTok{$}\NormalTok{cond}\OperatorTok{==}\NormalTok{j)}\OperatorTok{&}\NormalTok{(list}\OperatorTok{$}\NormalTok{IA }\OperatorTok{==}\NormalTok{i),x], }\DataTypeTok{na.rm=}\NormalTok{T)}
+\NormalTok{    \}}
+\NormalTok{  \}}
+\NormalTok{  matr}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+Wenn dieser Code für die Funktion ausgeführt wird, passiert erstmal gar
+nichts. Die Funktion muss aufgerufen werden und in der Klammer beide
+Argumente übergeben werden. Das Argument \textbf{list} sollte mit der
+\textbf{list1} übergeben werden, \textbf{x} enthält den Namen der
+Spalte, für den die Funktion ausgeführt werden soll.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Ausführung der Funktion, um Mittelwerte für }
+\CommentTok{# die Lesezeit First Fixation Duration des Datensatzes}
+\CommentTok{#list1 zu berechnen (First fixation Duration steht in Spalte 5)}
+\NormalTok{listffd =}\StringTok{ }\KeywordTok{matall}\NormalTok{(list1,}\DecValTok{5}\NormalTok{)}
+
+\CommentTok{# Ausführung der Funktion, um Mittelwerte für }
+\CommentTok{# die Lesezeit First Path Time des Datensatzes }
+\CommentTok{# list1 zu berechnen (First Pass Time steht in Spalte 6)}
+\NormalTok{listfpt =}\StringTok{ }\KeywordTok{matall}\NormalTok{(list1,}\DecValTok{6}\NormalTok{)}
+
+\CommentTok{# Ausführung der Funktion, um Mittelwerte }
+\CommentTok{# für die Lesezeit Regression-Path Time des Datensatzes}
+\CommentTok{# list1 zu berechnen (Regression Path Time steht in Spalte 7)}
+\NormalTok{listrpt =}\StringTok{ }\KeywordTok{matall}\NormalTok{(list1,}\DecValTok{7}\NormalTok{)}
+
+\CommentTok{# Ausführung der Funktion, um Mittelwerte }
+\CommentTok{#für die Lesezeit Total Reading Time des Datensatzes}
+\CommentTok{#list1 zu berechnen (Total Reading Time steht in Spalte 8)}
+\NormalTok{listtrt =}\StringTok{ }\KeywordTok{matall}\NormalTok{(list1,}\DecValTok{8}\NormalTok{)}
+
+\CommentTok{# Ausführung der Funktion, um Mittelwerte für die Lesezeit}
+\CommentTok{# Rereading Time des Datensatzes list1 zu berechnen }
+\CommentTok{# (Rereading Time steht in Spalte 12)}
+\NormalTok{listrer =}\StringTok{ }\KeywordTok{matall}\NormalTok{(list1,}\DecValTok{12}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\chapter{Grafische Darstellung der
+Daten}\label{grafische-darstellung-der-daten}
+
+Mit der Erstellung von \textbf{listffd}, \textbf{listfpt},
+\textbf{listrpt}, \textbf{listtrt} und \textbf{listrer} haben wir
+Tabellen, die die jeweiligen Lesezeiten in ms für alle Interest Areas 1
+bis 6 und alle 4 Bedingungen darstellt. Unterschiede in den Mittelwerten
+lassen sich auch schon in den Tabellen ablesen. Trotzdem möchte man die
+manchmal Daten gern grafisch darstellen. \textbf{R} bietet dafür sehr
+viele verschiedene Pakete wie z.B. \emph{ggplot} an. Die Verwendung von
+ggplot würde hier aber zu weit führen, da wir wirklich nur 3 Treffen für
+die Datenauswertung geplant hatten. Wir werden hier die Basisfunktionen
+von R benutzen. Wer sich da noch weiter reinarbeiten will, kann immer
+gern die offiziellen Seiten von R, die Hilfefunktion oder Google
+benutzen.
+
+Schaut Euch doch erstmal die erstellten Tabellen mit den Lesezeiten an
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{listffd}
+\NormalTok{listfpt}
+\NormalTok{listrpt}
+\NormalTok{listtrt}
+\NormalTok{listrer}
+\end{Highlighting}
+\end{Shaded}
+
+Der folgende Befehl erstellt eine einfache Grafik der Lesezeiten in der
+übergebenen Tabelle da.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{matplot}\NormalTok{(,}\KeywordTok{t}\NormalTok{(listffd))}
+\end{Highlighting}
+\end{Shaded}
+
+Die Grafik sieht ein bisschen langweilig und auch wenig informativ aus.
+Wir können verschiedene Informationen zufügen.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{matplot}\NormalTok{(,}\KeywordTok{t}\NormalTok{(listffd), }\DataTypeTok{main =} \KeywordTok{c}\NormalTok{(}\StringTok{"First Fixation Durations auf den Interest Areas"}\NormalTok{),}\DataTypeTok{type=}\StringTok{"l"}\NormalTok{,}\DataTypeTok{col=}\KeywordTok{c}\NormalTok{(}\StringTok{"black"}\NormalTok{,}\StringTok{"grey"}\NormalTok{,}\StringTok{"darkblue"}\NormalTok{,}\StringTok{"lightblue"}\NormalTok{),}\DataTypeTok{lwd=}\DecValTok{6}\NormalTok{,}\DataTypeTok{axes=}\OtherTok{FALSE}\NormalTok{,}\DataTypeTok{xlab=}\NormalTok{(}\StringTok{"Interest Areas"}\NormalTok{),}\DataTypeTok{ylab=}\StringTok{"Lesezeiten in ms"}\NormalTok{,}\DataTypeTok{xlim=}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{6}\NormalTok{),}\DataTypeTok{lty=}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{4}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+Probiert doch mal den obigen Befehl aus. Wenn eine Grafik erstellt wird,
+ändert doch mal ein paar der Einstellungen (z.B., Farbe, Liniendicke
+\emph{lwd}, den Titel oder die Achsenbeschriftungen.
+
+Das folgende Beispiel zeigt, wie man die Grafik in ein .pdf Dokument
+exportieren kann.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Erstmal das Verzeichnis und den Namen angeben,}
+\CommentTok{# unter der die Grafik gespeichert werden soll}
+
+\KeywordTok{pdf}\NormalTok{(}\StringTok{"<Hier Ihr Verzeichnis + Name.pdf>"}\NormalTok{)}
+
+\CommentTok{# Erstellt die Grafik}
+\KeywordTok{matplot}\NormalTok{(,}\KeywordTok{t}\NormalTok{(listffd), }\DataTypeTok{main =} \KeywordTok{c}\NormalTok{(}\StringTok{"First Fixation Durations auf den Interest Areas"}\NormalTok{),}\DataTypeTok{type=}\StringTok{"l"}\NormalTok{,}\DataTypeTok{col=}\KeywordTok{c}\NormalTok{(}\StringTok{"black"}\NormalTok{,}\StringTok{"grey"}\NormalTok{,}\StringTok{"darkblue"}\NormalTok{,}\StringTok{"lightblue"}\NormalTok{),}\DataTypeTok{lwd=}\DecValTok{6}\NormalTok{,}\DataTypeTok{axes=}\OtherTok{FALSE}\NormalTok{,}\DataTypeTok{xlab=}\NormalTok{(}\StringTok{"Interest Areas"}\NormalTok{),}\DataTypeTok{ylab=}\StringTok{"Lesezeiten in ms"}\NormalTok{,}\DataTypeTok{xlim=}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{6}\NormalTok{),}\DataTypeTok{lty=}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{4}\NormalTok{))}
+
+\CommentTok{# Fügt die Achsenbeschriftungen hinzu}
+\KeywordTok{axis}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{1}\OperatorTok{:}\DecValTok{6}\NormalTok{,}\KeywordTok{c}\NormalTok{(}\StringTok{"IA1"}\NormalTok{,}\StringTok{"IA2"}\NormalTok{,}\StringTok{"IA3"}\NormalTok{,}\StringTok{"IA4"}\NormalTok{,}\StringTok{"IA5"}\NormalTok{,}\StringTok{"IA6"}\NormalTok{),}\DataTypeTok{cex.axis =} \DecValTok{1}\NormalTok{)}
+\KeywordTok{axis}\NormalTok{(}\DecValTok{2}\NormalTok{, }\DataTypeTok{cex.axis =} \FloatTok{1.0}\NormalTok{)}
+
+\CommentTok{# Fügt eine Legende hinzu}
+\KeywordTok{legend}\NormalTok{(}\DataTypeTok{x=}\KeywordTok{c}\NormalTok{(}\FloatTok{3.5}\NormalTok{,}\DecValTok{5}\NormalTok{),}
+       \DataTypeTok{y=}\KeywordTok{c}\NormalTok{(}\DecValTok{300}\NormalTok{,}\DecValTok{320}\NormalTok{),}
+       \DataTypeTok{legend =} \KeywordTok{c}\NormalTok{(}\StringTok{"cond1"}\NormalTok{,}\StringTok{"cond2"}\NormalTok{,}\StringTok{"cond3"}\NormalTok{,}\StringTok{"cond4"}\NormalTok{),}
+       \DataTypeTok{lwd=}\DecValTok{4}\NormalTok{,}
+       \DataTypeTok{lty=}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{4}\NormalTok{),}
+       \DataTypeTok{col=}\KeywordTok{c}\NormalTok{(}\StringTok{"black"}\NormalTok{,}\StringTok{"red"}\NormalTok{,}\StringTok{"grey"}\NormalTok{,}\StringTok{"pink"}\NormalTok{),}
+       \DataTypeTok{xjust=}\DecValTok{1}\NormalTok{,}
+       \DataTypeTok{yjust=}\DecValTok{1}\NormalTok{,}
+       \DataTypeTok{cex =} \DecValTok{1}\NormalTok{)}
+\CommentTok{#trace=TRUE)}
+
+\CommentTok{# Ende}
+\KeywordTok{dev.off}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+Dieser Befehl wird eine Grafik erstellen und diese als .pdf exportieren.
+Bitte ausprobieren, schauen, ob die Grafik erstellt wurde und sich
+öffnen lässt. Danach einzelne Änderungen an der Formatierung
+ausprobieren (andere Farben, andere Achsenbeschriftungen, andere Titel
+o.ä.)
 
 \bibliography{book.bib,packages.bib}
 
