@@ -112,7 +112,7 @@
 
 \title{Datenanalyse: Eye-tracking 2020/2021}
 \author{Katja Suckow}
-\date{2021-01-21}
+\date{2021-01-22}
 
 \begin{document}
 \maketitle
@@ -249,26 +249,6 @@ Die Anordnung der Fenster lassen sich über \textbf{RStudio}
 ändern. Über \textbf{Preferences} können Sie sich generell anzeigen
 lassen, welche Änderungen Sie u.a. bei der Anzeige vornehmen können
 bzw.\textasciitilde{}wollen.
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{2}
-\tightlist
-\item
-  \textbf{Shiny App}
-\end{enumerate}
-
-Das ist eine App, die in RStudio integriert ist und die deskriptive
-Daten mit \textbf{R} bildlich und interaktiv veranschaulichen kann und
-auch veröffentlicht. Wenn man sich einmal ein bisschen mit R
-auseinandergesetzt hat, kann man sich mit Shiny weiter ``austoben''.
-
-\begin{figure}
-\centering
-\includegraphics{./img/Shiny-Example.png}
-\caption{Beispiel des Screenshots einer Shiny App, die interaktiv die
-Normalverteilung einer übergebenen Anzahl beobachteter Werte anzeigt.}
-\end{figure}
 
 \section{Einleitung: Datentypen in der
 Linguistik}\label{einleitung-datentypen-in-der-linguistik}
@@ -1702,6 +1682,27 @@ Bitte ausprobieren, schauen, ob die Grafik erstellt wurde und sich
 öffnen lässt. Danach einzelne Änderungen an der Formatierung
 ausprobieren (andere Farben, andere Achsenbeschriftungen, andere Titel
 o.ä.)
+
+\chapter{Beispiel Shiny App}\label{beispiel-shiny-app}
+
+Hier separat der Link zu einer Shiny App. Diese App wurde mit R
+erstellt. Shiny selber ist auch einfach in Rstudio integriert und kann
+leicht mit einem Template gebaut werden.
+
+\begin{figure}
+\centering
+\includegraphics{./img/Shiny-Example.png}
+\caption{Shiny Beispiel}
+\end{figure}
+
+\url{https://katsuckow.shinyapps.io/shiny/}
+
+Link zu einer App, die die Normalverteilung von Daten in einem Histogram
+und q-q Plot darstellt. Ausserdem werden noch verschiedene statistische
+Eckdaten der Verteilung und die jeweiligen dargestellten Werte
+aufgelistet. Auf dem Slider auf der linken Seite kann man die Anzahl der
+übergebenen Werte ändern. Man kann daran sehen, wie die Verteilung bei
+ansteigender Anzahl von Werten zunehmend einer Normalverteilung ähnelt.
 
 \bibliography{book.bib,packages.bib}
 
